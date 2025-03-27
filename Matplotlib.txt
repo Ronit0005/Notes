@@ -1,0 +1,114 @@
+Matplotlib
+
+
+* matplotlib.__version__: To check the version of the matplotlib
+
+* import matplotlib.pyplot : To import 
+
+* xpoint=np.array([1,2,3])
+  ypoint=np.array([4,5,6])
+  plt.plot(xpoint,ypoint)
+  plt.show()
+
+* plt.plot(x,y,'o') : To just mark the point with dots
+
+* plt.plot(y) : If only one value is supplied it is created an y coordinates and default value of x is [0,1,2,3...]
+
+* plt.plot(y,marker='o') : To mark the point with dot 
+   -marker can be 'P','*','p'
+
+* plt.plot(y,'marker Type_of_line color') : It is a syntax for specifying the marker , type of line and color together in a single apostrophe .
+
+* plt.plot(y,'*:r',ms=10) : ms stands for marker size .
+
+* plt.plot(y,marker='o',ms=10,mec='y',mfc='b') " mec stands for marker edge color and mfc stands for marker face color . 
+
+* plt.plot(y,ls=':/dotted') : ls stands for line style . ls='dashed/-','-.' 
+
+* plt.plot(y,c='r') : c stands for color .
+
+* plt.plot(y,ls=':',lw=10) : lw stands for line width .
+
+* If want to plot two or more line on the same graph : plt.plot(x,c='r')
+                                                       plt.plot(y,c='y')
+                                                       plt.show()
+
+* plt.xlabel("...") : For giving the x label for the graph .
+
+* plt.ylabel("...") 
+
+* plt.title("...") : For giving the title for the plot .
+
+* font={"family":"serif",'color':'blue','size':10}
+  plt.xlabel('...',fontdict=font)
+  This is done for changing the font , color , size of the title or label .
+
+* plt.grid() : For adding grid lines to the plot .
+
+* plt.grid(axis='x/y') : For displaying only x/y coordinate grid .
+
+* plt.grid(axis='both',c='r',lw=10,ls=':') : For changing the font , color and style of the grid lines . 
+
+* plt.subplot(1,2,1) # 1row , 2col , 1st graph 
+  plt.plot(x,y)
+  plt.subplot(1,2,2)
+  plt.plot(a,b)
+  plt.show()
+   
+  For showing multiple graph in a single graph .(first subplot , then plot)
+
+SCATTER :-
+
+* plt.scatter(x,y) : To display only points not the connecting line .
+  plt.show()
+
+* plt.scatter(x,y,c='y') : c stands for color .
+
+* For displaying all the points with diff. color:-
+  colors=np.array(["red",'yellow','blue'])
+  plt.scatter(x,y,c=colors)
+
+* sizes=np.array([10,1,2,3,4,5])
+  plt.scatter(x,y,s=sizes/10,alpha=0.5) : s stands for sizes , alpha stands for transparancy
+
+BAR GRAPH :-
+
+* x=np.array(['A','B','C','D'])
+  y=np.array([1,2,3,4])
+  plt.bar(x,y)
+  plt.show() 
+
+plt.bar
+
+* plt.bar(x,y,color='y') : For displaying the color full graph .
+
+* plt.bar(x,y,width=0,.1)
+  plt.barh(x,y,height=0.3)  : For changing th width of the graph . 
+
+
+Histograph :-
+
+* x=np.random.normal(170,10,250) : Random value with std : 10 , value should be concentrated at 170 , values should be from 0 to 250 . 
+
+* plt.hist(x) : To get a histograph . 
+
+Pie Chart :-
+
+* x=np.array([35,25,25,15])
+  plt.pie(x)
+  plt.show()  : To display a pie chart 
+
+* my_labels=np.array(["apple",'banana','cheries','dates'])
+  plt.pie(x,labels=my_label)
+  plt.show() : To label the each part .
+
+starts from x axis and moves anticlockwise .
+
+* my_explode =np.array([0.1,0,0,0])
+  plt.pie(x,labels=my_label,explode=my_explode) : To shift that part outer from the chart .
+
+* plt.legend(title="Fruits") : To correlate the color with name .
+
+* my_color=np.array(['red','blue','yellow','black'])
+plt.pie(x,labels=my_label,colors=my_color) : For specifying the color for each part .
+

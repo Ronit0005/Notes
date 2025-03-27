@@ -1,0 +1,143 @@
+Numpy
+
+
+- Numpy is build on cpp but by use of API , we can create it using python .
+- Calculation of matrices with multiple dimension , takes a lot of computation , hence we use Numpy . 
+- we should keep similar data type in array , as numpy is excellent at performing operation on array with similar data type .
+
+
+Array :-
+- To make an array 1D:-
+	-import numpy as np
+	-array=np.array([x,y,z])
+	-print(array)
+- To make a an array 2D:-
+	-array=np.array([[1,2],[3,4]])
+	-print(array)
+
+Numpy VS List:-
+- list=[1,2]
+  print(list*2)
+  O/P: [1,2,1,2]
+-array=np.array([1,2])
+ print(array*2)
+ O/P: [2,4]
+-Numpy is faster than python list .
+
+- To print a matrix with all element as zeros .
+  array=np.zeros((2,3))
+  print(array)
+
+- To print a matrix with all elements as ones .
+  array=np.ones((1,2))
+  print(array)
+
+- To print an element with all elements with constant element Ex: 6 .
+  array=np.full((1,3),6)
+  print(array)
+
+- Tp print an element with all elements as random values .
+  array=np.random.random((2,3))
+  print(array)
+
+- To print an array with sequence from 0 to 10 with alterante value .
+  array=np.arange(0,10,2)
+  print(array)
+
+- Vector are 1 d array .
+- Matrices are 2 d array .
+- Tensor are 3 d array
+
+Array Properties :-
+  
+
+- import numpy as np
+  array=np.array([1,2,3,4,5,6,7])
+ 
+- To get the total number of element of the array : array.size
+
+- To get the shape of the array : array.shape 
+
+- To get the dimension of the array : array.ndim
+
+- To get the data type of the element of the array : array.dtype
+
+
+Array Reshaping :-
+
+- To reshape a 1d array to 2d : array.reshape((2,3))
+
+- To reshape a 2d array to 1d : array.flatten()  -> returns the original   OR
+                                array.ravel()  -> return the copy
+
+- To transpose an array : array.T
+
+
+Slicing :-
+
+- for basic slicing we use : arr[2:7]
+- with step slicing : arr[0:12:2]
+- negative indexing : arr[::-1]
+
+Indexing And Slicing in 2D array :-
+
+- For indexing in 2d array : arr[2,1]
+- For getting entire row : arr[2]
+- For getting entire column : arr[:,2]
+
+Sorting :-
+
+- For column wise sorting : np.sort(unsorted_array,axis=1)
+- For row wise sorting : np.sort(unsorted_array,axis=0)
+
+
+Filtering :-
+
+- For getting all even numbers : even_num=array[array%2==0]
+- Filtering with mask : mask=array>5
+                        array[mask]
+- Fancy indexing : index=[0,2,5]
+                   array[index]
+- where : where_result=np.where(array>5)
+          array[where_result]
+- where with steps : conditonal_result=np.where(array>5,array*2,array)
+                     print(conditional_result)
+- Concatenation in array : np.concatenate((arr1,arr2))
+
+- For checking whether two array are compatible to be added : a.shape == b.shape
+
+- Adding rows in array : original=np.array([[1,2],[3,4]])
+                         new_row=np.array([10,11])
+                         new_array=np.vstack((original,new_row))
+
+- Adding column in array : original=np.array([[1,2],[3,4]])
+                           new_col=np.array([[7],[8]])
+                          new_array=np.hstack((original,new_col))
+
+- Deleting an element from an array : np.delete(array,index)
+
+- Sum of all the elements in array : np.sum(array,axis=1/0)
+
+- miminum amoung an array : np.min(array,axis=0)
+
+- average sales : np.mean(array,axis=0)
+
+- cumulative sales : np.cumsum(array,axis=1)
+
+- To get the dot product of two vector we use : np.dot(vector1,vector2)
+
+- To get the angle between two vector : angle=np.arccos(np.dot(vector1,vector2)/(np.linalg.norm(vector1*np.linalg.norm(vector2))))
+
+- To make any python operation on vector : 
+  names=np.array(['ronit','rohit','sohail','sridhar','ansh'])
+  vectorized_upper=np.vectorize(str.upper)
+  print(vectorized_upper(names))
+
+- Broadcasting : O1=arr[:,1:]/12
+
+- To select a particulat type of data : 
+  z=np.arange(10,dtype=np.uint8)
+
+- read the data type from the documentation . 
+
+

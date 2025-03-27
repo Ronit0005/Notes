@@ -1,0 +1,11 @@
+Virtual Environment
+
+-step 1: create a folder where you want to create a virtual environment .
+-step 2: change the directory through 'cd' command .
+-step 3: write ' python -m venv {file_name} ' in CMD .
+-STEP 4: To activate the virtual environment write ' {file_name}\Scripts\activate ' in cmd .
+
+
+
+
+Set-ExecutionPolicy Unrestricted -Scope Process         -> to unstrict

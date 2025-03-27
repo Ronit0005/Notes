@@ -1,0 +1,68 @@
+* Memory allocation of functions are like stack.
+* We cannot access the elements of function in main variable.
+* sizeof(data type):Gives the size taken by that data type in c++.
+* How a negative number is stored in the memory.-> By two's compliment.
+   a.We calculate the binary form of the number.
+   b.We prefix the number with 0.
+   c.We compliment the obtained number.
+   d.We add 1 to the obtained number
+* How to known the negative number whose binary form is given. NOTE: Here we known that the given binary form is negative.
+   a.Calculate the compliment of the number.
+   b.Add 1 to the obtained number.
+   c.Calculate the decimal form and prefix it with a negative sign.
+* There is a bitwise operator ^ , which results in 0 if the operand are same otherwise 1.It is called XOR operator.
+* There are bitwise left shift and right shift -> left shift operator :<< : shifts the binary digits by some place.
+   Eg., 10<<2->1010->101000->40.It does the operation 10*2^2
+   Right shift operator:>> :Also shifts the binary digits by some place.
+   Eg.,10>>1->1010->0101->5(10/(2^1)
+* precendence order-> ! > ++ ,-- > *,/,% > +,-.
+   The least precendence is given to assignment operator '='.
+   Use paranthesis to break the rule.
+   If two operator of equal precendence are there -> use law of associativity(evaluate from the left to right).
+* If the number is positive then MSB is 0.
+* data type modifier in c++: long , long long , short , signed , unsigned(stores only positive number | Due to which it can store a number double than before )
+* min(n[i],smallest)->returns minimum of two numbers.
+* INT64_MAX;->Returns the maximum integeral value for integer in 64 bit
+* swap(pos1,pos2) -> swaps the elemets of the array.
+* Vector functions:-
+   -vec.size()->returns the size of the vector.
+   -vec.push_back(a)->adds a to the last of the vector.
+   -vec.pop_back()->removes the elements from the last of the vector.
+   -vec.front()->returs the first elements from the vector.
+   -vec.back()->returns the last elements from the vector.
+   -vec.at(a)->returns the elements presents at the a index.
+* Time Complexity :Is not the actual time taken during the execution of the prg. but it is amt. of time taken at a function of input (size n).  (ie., No.of operation).
+* Space Complexity: Is the amt. of space taken by the algorithm as a function of input(size n).
+* O(1):Is of constant space or time(Best time complexity).
+* In calculating time complexity -> we first ignore the constant then , we ignore the small value of n.
+* Time Complexity for binary search -> log n (base 2).
+* Time Complexity for prime numbers : Under root n .
+* Time Complexity of recursive function is given by : no. of recursive calls X work done in each call .
+* Space Complexity of recursive function is given by : height of call stack X memory occupied in each call .
+* Sum of geometric progression is : a((r^n)-1)/(r-1) .[a : starting term ; r : common difference ; n : total number of calls].
+* For the Fibonacci recursive code : Time complexity is :2^n(ACCURATELY:1.618^n)[Golden ratio]
+* TLE: Time limit exceed 
+* 1s=10^8 operations 
+* nlogn : is the time complexity of sorting algorithm.
+* n<=25: Recursion brute force .(2^n)
+* n<=12 : factorial time complexity.(n!)
+* In C++ : array are not resizeable
+* In C++ : string are Mutable.
+* string str="Ronit";
+    string st="Kumar Singh";
+    cout<<"Concatination of two strings can be done by : "<<str+' '+st;
+* whenever next line comes (cin) stops taking the input.
+* str.find(substring) ->returns the index of substring , if not found ir returns a number greater than length of the string .
+* str.erase(start,length) -> erases the substring from the main string.
+* 2 d array in memory : 1. row measure 2. column measure
+  row measure: 1|2|3|4|5|6|7|8|9|10|11|12
+  column measure: 1|4|7|2|5|8|11|3|6|9|12
+* if we are passing an 2 d array to a function , in that function , it is compulsory to specify the number of columns(int mat[][3])
+* Pointer are special variables which can store the address of another variable .
+* '*' -> it is dereferencing operator.
+* creating reference of a variable can be done by : int& b=a; : it means that a and b are the name of same memory address .
+* array name are constant pointer : it means that they cannot be changed .
+* in cpp we cannot add two pointer but we can subtract two pointer , which would give the number of blocks between them.  ( in BYTE not Bits)
+* we can also make a pointer of none type .(int* ptr = NONE; )
+* We ca also apply relational operator to the pointer .
+* Binary exponentiation :- n=8 -> binaryFormOfN=1000 -> log2 8 +1   -> x^n:2^5 -> n=5 -> 101 -> 2^1 * 2^4 -> 2*16 -> 32 .

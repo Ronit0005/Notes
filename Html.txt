@@ -1,0 +1,65 @@
+HTML stands for : Hyper text markup language.
+* Html is used to structure a web page and its content.
+* The component use to design the structure of the website is called html tags.
+
+* Html tags: A container for some paragram or for some other container.
+   <p>This is paragraph</p>
+
+* Content written in " head " is not displayed on the screen .
+
+* HTML tag is parent of head and body tag.
+* For new line use <br> tag.
+* For writing down comments in html code <!-- content -->
+* HTML is not case sensitive.
+* Attributes in html : are used to add more information to the tag.
+   <html lang="en">
+* <h1>The heading 1 </h1>   :to: <h6> The heading </h6>
+* select the whole line -> setting -> command pallete ->toggle word wrap.
+* To display link on our web -> <a href="LINK"> GOOGLE </a> : Anchor tag
+* for displaying image -> <img src="IMAGE LINK" height='100" width="20" alt="ALTERNATIVE NAME"/>
+* it is advisible to change one dimension at a time.
+* for bold , italic and underline text -> <b>TEXT</b> ; <i>TEXT</i> ; <u>TEXT</u>
+* we can use tags in tags.
+* <big>TEXT</big> -> for big text and <small>TEXT</small> -> for small text
+* <hr> -> for displaying a horizontal line on the web.
+* For chemistry we have to write formula of h2o -> <sub>Text</sub>  ------  if we have to write a to the power b -> <sup>TEXT</sup>
+* <pre>I am Ronit 
+      I am a student</pre>    --->it is like a multiline string .
+* Semantic tags:- <header> ; <main> ; <footer>
+* <section> :- for creating section in your page
+* <article> :- for an article on your page.
+* <aside> :- for content aside out content(ads).
+* if we use taget="_main" in anchor tags , then it will redirect the content to another tab.
+* we can make the image clickable by adding <img src="PHOTO LINK"> in anchor tag.
+* div tags are non semantic : they are block elements . They can contain the other tags . They take a big space on the screen .
+* span tag is a container used for other HTML tag.They are inline tags (ie.,they take the space required by the word only).img , br , b , i , u , <a> are inline element.
+* list are used to represent real life list. They are of two types : unordered list | written in bullet points and ordered list | written in number form .
+* For unordered list : <ul> <li>Apple</li> <li>Mango</li> </ul>
+* For ordered list : <ol> <li>Apple</li> <li>Mango</li> </ol>
+* You can also create a sub list.
+* <table border="1">:to create a table with border.
+* <tr> : for creating rows
+  <td> : for writing data 
+  <th> : table header
+* <caption> : caption for the table.
+* <thead> : consisting of the headings of the table.
+  <tbody> : consisting of the body of the table.
+* <th colspan="2"> : for giving a single heading for two columns .
+* <form> : are used to collect data from the user.
+* <form action="/action.php"> :starting.
+* <input type="text" placeholder="Enter your name"> : input statement.
+* we can also create a radio button : <input type="radio" value="XII" name="class">XII
+  <input type="radio" value="XI" name="class">XI
+  we can also enclose the radio button in the label tag so , that we can select the option just by clicking on the XI or XII.
+  FOR that we the syntax is <label for="101"> <input type="radio" value="XII" name="class" id="101">XII
+* <div id="101" class="grp1"> text </div> :Assiging id and class to a div
+* <label for="math"> <input type="checkbox" value="math" name="subject" id="1001">Math  -> For selecting multiple options.
+* For getting feedback we can use :<textarae name="Feedback" placeholder="plz give your feedback here!" id="1018" row="5">Feedback</textarea>
+* <select name="city">
+   <option value="Jamshedpur">Jamshedpur</option>
+  </select>
+* To submit the form we can use : <input type="submit" value="Submit">
+* To display website inside website :<iframe src"Link">
+* To display video on the website :<video src="myVideo.mp4" controls>My Video</video>  ->ATTRIBUTES : Control;height;width;autoplay;loop
+    We can also give a relative video link. 
+* Avoid autoplay ; if want to use autoplay -> turn off the sound.
