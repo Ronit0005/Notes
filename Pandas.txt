@@ -1,0 +1,108 @@
+PANDAS
+
+* Data Manipulation : changing , organizing or preparing data to make it easier to understand .
+* Data Analysis : Extracting trends , pattern and insights from data to solve the problem .
+* Series : One dimensional data set in python .
+* Dataframe : Is a two dimensional data structure .
+	- Rows have indeces .
+	- Coumn have name .
+* csv file : comma seprated value file .
+* For reading a file use : pd.read_csv("File_name") OR pd.read_json("File_name") OR pd.read_excel("File_name")
+* If there comes uncodedecodeIssue : use pd.read_csv("File_name",encoding="utf-8"/'latin1')
+* gcsfs : for reading data on cloud platform like (goggle cloud storange)
+* To convert a dict data type into data frame : pd.DataFrame(data)
+* To convert dataFrame into csv file : df.to_csv("Name_by_which_you_want_to_save_the_file")
+	and similarly for excel and json .
+* If I want to remove the index from file : df.to_csv("Above_file_name",index=False)
+* To display the rows of the data set use : df.head(n) : to display first n rows
+	df.tail(n) : to displat the last n rows 
+	- If df.tail() OR df.head() : is used then It displays the last the first 5 rows
+* df.info() : Its a method which gives the following information about the data set .
+	-range index : No of rows
+	-data column : No of column 
+	NOTE: object : string
+	-non null count : Number of non missing data points 
+	-Dtype : type of data in that column 
+	- memory usage 
+* Making an Data Frame using dictionary :
+  -data={ "Column_Name":[Element 1 , Element 2] , "Column_name_2":[Element 1 , Element 2] }
+  -df=pd.DataFrame(data)
+  -print(df)
+
+* Describe method : df.describe() :-
+  -mean 
+  -std : standard deviation 
+  -min : minimum value in that particular column .
+  -max : maximum value in that particular column . 
+  -25% : If the data is sorted , then the average of top 25 percent data element .
+  -50% : If the data is sorted , then the average of top 50 percent data element .
+  -75% 
+
+* To know the column and rows numbers : df.shape
+* To know the column names : df.column 
+
+* To access an particular column : df["Column_Name"]
+
+* To access an number of columns : df[["col_1","col_2","col_3"]]
+  NOTE : There are two square brackets . 
+
+* To access rows based on a given condition : df[df["col_name"]>30]
+
+* To access rows based on a number of condition : df[(df["col_1"]>30) & (df["col_2"]<40)]
+
+* For using head in csv , json , excel file 
+  -df=pd.read_json("File_name")
+  -print(df.head())
+
+* std(standard_deviation) = Math.sqrt(submition((xi-mean)^2) / n-1 )
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Advance Pandas 
+
+* Adding new column in data set : df["New_co_name"]=df["col_1"]*0.1 + df["col_1"]
+
+* Adding new column at specific position : df.insert(n,"New_col_name",[a1,a2,a3,a4,a5])
+
+* Updating value at a particular sheel : df.loc[row_number,"col_name"]
+
+* Removing column from a data set : df.drop(columns=["col_name"],inplace=True)
+
+* Removing multiple column from a data set : df.drop(columns=["col_name","col_name_2"],inplace=True)
+
+
+* For kowning the null data cell : df.isnull()
+
+* for knowing the exact number of null data sets in a column : df.isnull().sum()
+
+* For removing whole row , which has a null data point : df.dropna(inplace=True)
+
+* For filling all missing value by a single value : df.fillna(0,inplace=True)
+
+* For concatenating two data set : pd.concate(["file_1","file_2"],axis=1/0,ignore_index=True)
+
+* when we want to merge two data frames : pd.merge(df_1,df_2,on="Common_Col_name",how="inner"/"outer"/"left"/"right"/"cross")
+
+* df["col_name"].fillna(df["col_name].mean(),inplace=True) : For filling the missing values in a column by the average value of that column .
+
+* We can also fill an missing value using interploation : df.interpolate(method="linear"/"polynomial"/"time",axis=0/1,inplace=True)
+NOTE : DOUBT
+
+* We can also sort the rows using sorting : df.sort_values(by="col_name",ascending=True,inplace=True)
+
+* We can also sort values using two column : df.sort_values(by=["col_1","col_2"],ascending=True,inplace=True)
+  NOTE : The priority of first col is more than second . If first condition is same for many cases then sort according to second condition .
+
+* We can calculate sum , mean , count , min , max , std . 
+ - df["col_name"].sum()
+ - df["col_name"].mean()
+
+* For grouping : df.groupby("col_name")["salary"].sum()
+
+* For grouping using two values : df.groupby("col_name","col_name_2")["salary"].mean()
+
+
+
+Have a doubt in cross of merging and interploation 
