@@ -81,7 +81,7 @@ Advance Pandas
 
 * For filling all missing value by a single value : df.fillna(0,inplace=True)
 
-* For concatenating two data set : pd.concate(["file_1","file_2"],axis=1/0,ignore_index=True)
+* For concatenating two data set : pd.concat([file_1,file_2],axis=1/0,ignore_index=True)
 
 * when we want to merge two data frames : pd.merge(df_1,df_2,on="Common_Col_name",how="inner"/"outer"/"left"/"right"/"cross")
 
