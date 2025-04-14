@@ -1,0 +1,151 @@
+My SQL 
+
+- Database is collection of data in a format that can be easily accessed .(Digitally)
+- DBMS : Data base management system . Is a software application that manages our data . 
+- Two types of databases :-
+  -Relational databases :- Data stored in tables . (Ex: My SQL )
+  -Non Relational datbases :- Data not stored in tables . ( Ex: mongo DB )
+- What is sql : (sturctured query language ) : sql is a programming language used to interact with relational databases . 
+ Helps in performing :CRUD operation : Create , Read , Update , Delete
+
+- One database can have many tables .
+
+- SEQUEL : Structured english query language .
+
+- Creating a database : CREATE DATABASE IF NOT EXITS db_name ;
+  Deleting a database : DROP DATABASE IF EXITS db_name ;
+
+- Activating a particular data base : USE db_name ;
+
+- Creating a table :
+  CREATE TABLE table_name (
+  col_name_1 data_type Constraints ,
+  col_name_2 data_type Constraints );
+  Deleting a table : DROP TABLE table_name ;
+
+- Types of data type : CHAR : length 0 to 255 , But reserves the storage even if it is not used ; VARCHAR : lenght 0 to 255 , but it does not reserves , hence saves memory ; BLOB : length 0 to 65535 ; INT : integer value ; TINYINT : from -128 to 127 ; BIGINT : larger integer value ; BIT : stores binary number ; FLOAT : decimal number ; DOUBLE : larger decimal value ; BOOLEAN : 0 or 1 ; DATE : format -> 'YYYY-MM-DD ; YEAR : In your digit .
+
+- We also have signed and insigned data type : TINYINT INSIGNED : from 0 to 255 . 
+
+- Types of sql command :-
+  - DDL (data definition language) : create , alter , rename , truncate , drop .
+  - DQL (data query language) : select .
+  - DML (data maipulation language) : insert , update , delete .
+  - DCL (data control language) : grant & revoke permission to users .
+  - TCL (transition control language) : start transaction , commit , rollback 
+
+- Scheme : column .
+
+- For getting all the data from table : SELECT * FROM table_name ;
+
+- Inserting values in table : INSERT INTO table (rollno,name,age) VALUES (101,"Ronit",20) (102,"Rishi",22) ;
+  (rollno,name,age) is optional 
+
+- primary key : - Non Null - Unique 
+
+- Keys : - primary key : only one in a table  , should not be null - foreign key : Is a primary key of some other column present in some other table . Values can be repeated in foreign keys 
+
+- Constraints : - NOT NULL - UNIQUE - PRIMARY KEY (can be only one in the table ) - DEFAULT - FOREIGN KEYS   - CHECK (CONSTRAINT constraint_name CHECK (CONDITION) )
+
+- Where Clause :
+ - Arithematic operator : +,-,/,*,%
+ - Comparision operator : equal to , not equal to , greater than equal to .
+ - Logical operator : and , or , not(negates any condition) , in( marks IN (10,20,93) ) , between (inclusive) ( marks BETWEEN 10 AND 90 ) , all , like , any .
+ - Bitwise operator : & , | 
+
+- limit clause : SELECT * FROM student LIMIT 3 ;
+
+- ORDER BY clause : SELECT * FROM children ORDER BY city ASC/DESC ;
+
+- Aggregate function : count , max , min , sum , avg . { SELECT sum(marks) FROM children ;
+
+- Having clause : Used when we want to apply some condition after grouping . This condition is applied on group . 
+  SELECT city , count(name) , max(marks) 
+  FROM student 
+  GROUP BY city 
+  HAVING max(marks) > 90 ; 
+
+- General order : - select - from - where - group by - having - order by 
+
+- To disable the safe mode : SET SQL_SAFE_UPDATES = 0; 
+
+- Updating values from a table : 
+  UPDATE table_name 
+  SET grade = "S"
+  WHERE grade ="A" ;
+
+- Deleting values from a table (full row is removed) :
+  DELETE FROM student 
+  WHERE marks > 90 ;
+
+- FOREIGN KEY :
+  CREATE TABLE parent (
+  name VARCHAR(50) ,
+  id INT PRIMARY KEY );
+
+  CREATE TABLE child (
+  manager_id INT ,
+  dept VARCHAR(50) 
+  FOREIGN KEY (manager_id) REFERENCES parent(id)
+  ON UPDATE CASCADE 
+  ON DELETE CASCADE ) ; 
+
+- EER diagrams : Entity relationship diagram . ( how different tables are conected with each other ) . 
+
+- Table in which there is foreign key is called child table , and table in which there is primary key is called child table . 
+
+- ALTER TABLE table_name 
+  ADD COLUMN col_name col_dataType col_constraint ;  # For adding a new column 
+  RENAME TO new_table_name ;   # For renaming the whole table 
+  DROP COLUMN col_name ;    # For removing an whole column 
+  CHANGE COLUMN old_col_name new_col_name old_dataType old _constraint ;   # For renaming an column name 
+  MODIFY col_name new_dataType new_constraint ;    # For modifying the col data type and constraint . 
+
+- TRUNCATE TABLE table_name ; # For clearing all the data from the table .
+
+
+
+- Types of joints :- - Inner (common elements ) - left (left + common)  
+                     - right (right + common) - full joints (Union of left and right join [in my sql but in oracle we can use full join ])
+  - left , right , full -> outer joints .
+
+- alias : Can be created by using the keyword ( as )
+
+- For creating copy table : 
+  CREATE VIEW sample AS 
+  SELECT rollno , name , grade FROM student ;
+
+- Subquery is a query inside another query . 
+
+- Subquery can be written inside : SELECT , FROM AND WHERE . 
+
+- WHERE :
+  SELECT * 
+  FROM student 
+  WHERE marks > ( SELECT max(marks) FROM student ) ;
+
+- FROM : 
+  SELECT max(marks) 
+  FROM (
+  SELECT * 
+  FROM children 
+  WHERE city="Delhi" ) AS temp;
+
+- SELECT (SELECT max(marks) FROM children) , name FROM children ;
+
+- Like : Used for pattern , .... ALL '%A : means starts with A .
+ 
+- ANY : Used for comparision :
+
+- ALL : Used for comparision .
+
+- We can change the name of the column in the output by : SELECT author_id AS id ;
+
+- DISTINCT : Used to remove the duplicate elements from a column 
+  SELECT DISTINCT author_id 
+  FROM Views ;
+
+- LENGHT : To calculate the lenght of the a varchar or char 
+  SELECT LENGTH(content)
+  FROM Views ;
+
